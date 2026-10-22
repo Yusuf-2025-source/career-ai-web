@@ -1,0 +1,105 @@
+/* ===========================================================================
+   COLOR PALETTE — single source of truth (Light + Dark).
+   Light colors were sampled from the approved Login/Register designs.
+   Dark colors come from the dark brand palette (Night #02060F / Card #0A1220).
+   Change a color here and the whole app updates.
+   ========================================================================= */
+
+:root,
+:root[data-theme="light"] {
+  /* Surfaces */
+  --bg: #FAFBFF;
+  --surface: #FFFFFF;
+  --field-bg: #FFFFFF;
+  --rules-bg: #F2F2FC;
+  --border: #E3E8F2;
+
+  /* Text */
+  --text: #0F172A;
+  --text-soft: #475569;
+  --text-mute: #8592A6;
+
+  /* Brand */
+  --primary: #2172CD;
+  --primary-deep: #065CB1;
+  --link: #0B5CB8;
+  --accent-green: #1FBF8A;
+
+  /* Right showcase panel */
+  --panel-from: #EEF1F8;
+  --panel-to: #DDEFFB;
+  --panel-grid: rgba(33, 114, 205, .07);
+  --chip-bg: #E2F3F4;
+  --chip-text: #0E8A8A;
+
+  /* Logo (CareerPath) */
+  --logo-career: #34457A;
+  --logo-path: #3B82D6;
+  --logo-dot: #2DD4BF;
+
+  /* Status */
+  --success: #14C2B2;
+  --danger: #F43F5E;
+  --warning: #FACC15;
+
+  /* Journey steps (Register) */
+  --step-1: #14B8A6;
+  --step-2: #2563C9;
+  --step-3: #D98A06;
+  --step-4: #8B5CF6;
+  --step-5: #0F8CA0;
+  --step-6: #EA580C;
+
+  /* Quick tips (Login) */
+  --tip-1: #2DB38A;
+  --tip-2: #4C89D0;
+  --tip-3: #E5B422;
+  --tip-4: #A78BFA;
+
+  --shadow: 0 6px 20px rgba(16, 24, 40, .07);
+}
+
+:root[data-theme="dark"] {
+  --bg: #02060F;
+  --surface: #0A1220;
+  --field-bg: #0E182B;
+  --rules-bg: #0E182B;
+  --border: #1B2A44;
+
+  --text: #EAF0FA;
+  --text-soft: #A9B6CC;
+  --text-mute: #6F7E96;
+
+  --primary: #2E7FE8;
+  --primary-deep: #2172CE;
+  --link: #5AA2FF;
+  --accent-green: #34D399;
+
+  --panel-from: #0A1220;
+  --panel-to: #0B1B33;
+  --panel-grid: rgba(47, 197, 224, .07);
+  --chip-bg: #0F2A2E;
+  --chip-text: #2FC5E0;
+
+  --logo-career: #EAF0FA;
+  --logo-path: #5AA2FF;
+  --logo-dot: #14C2B2;
+
+  --success: #14C2B2;
+  --danger: #F43F5E;
+  --warning: #FACC15;
+
+  --step-1: #14C2B2;
+  --step-2: #2E7FE8;
+  --step-3: #F5A524;
+  --step-4: #A78BFA;
+  --step-5: #2FC5E0;
+  --step-6: #FB7C3C;
+
+  --tip-1: #34D399;
+  --tip-2: #5AA2FF;
+  --tip-3: #FACC15;
+  --tip-4: #C4B5FD;
+
+  --shadow: 0 6px 20px rgba(0, 0, 0, .45);
+}

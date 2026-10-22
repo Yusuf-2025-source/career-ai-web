@@ -1,0 +1,36 @@
+// Egyptian Arabic (عامية مصرية) — written the way people actually talk in apps, not literal translations.
+export default {
+  nav: { tracks: "المسارات", questions: "اعرف مسارك", skills: "مهاراتك", menu: "القايمة الرئيسية", switchLang: "غيّر اللغة", langName: "English" },
+  common: { retry: "جرّب تاني", loading: "ثواني…", genericError: "حصلت مشكلة. جرّب تاني بعد شوية.", back: "رجوع" },
+  tracks: {
+    title: "المسارات الوظيفية", intro: "اتعرّف على المسارات المتاحة وشوف كل مسار بيقدّم إيه قبل ما تقرر.",
+    explore: "شوف التفاصيل", solves: "بيحل إيه؟", roles: "الوظايف المتاحة", prerequisites: "محتاج تعرف إيه الأول؟",
+    emptyTitle: "مفيش مسارات دلوقتي", emptyDesc: "مفيش مسارات متاحة حاليًا. ارجع شوية كمان.",
+    errorTitle: "معرفناش نحمّل المسارات", notFoundTitle: "المسار ده مش موجود", notFoundDesc: "ممكن يكون اتشال أو اللينك غلط.",
+    backToAll: "كل المسارات", skillsNeeded: "المهارات اللي هتستخدمها", nextTitle: "مش عارف أنهي مسار يناسبك؟",
+    nextDesc: "جاوب على كام سؤال أو قولنا إنت بتعرف إيه.", ctaQuestions: "جاوب على الأسئلة", ctaSkills: "اختار مهاراتك",
+    recoSkill: "ترشيح حسب المهارات", recoQuestion: "ترشيح حسب الأسئلة",
+    setMine: "خلّي ده مساري", isMine: "ده مسارك", saveError: "معرفناش نحفظ مسارك. جرّب تاني.",
+  },
+  questions: {
+    title: "اعرف المسار اللي يناسبك", intro: "جاوب على كام سؤال بسيط، ومفيش إجابة صح ولا غلط. اختار اللي بيشبهك.",
+    sample: "أسئلة تجريبية — الأسئلة الحقيقية هتيجي من الباك إند.", progress: "سؤال {n} من {total}", reviewStep: "المراجعة",
+    hintSingle: "اختار إجابة واحدة", hintMultiple: "اختار واحدة أو أكتر", hintMax: "اختار لحد {max}", optional: "اختياري",
+    required: "جاوب على السؤال ده الأول.", prev: "السابق", next: "التالي", toReview: "راجع إجاباتك",
+    reviewTitle: "راجع إجاباتك", reviewIntro: "اتأكد من إجاباتك قبل ما تبعتها. تقدر تعدّل أي إجابة.",
+    edit: "تعديل", skipped: "اتخطّيته", submit: "ابعت إجاباتي", submitting: "بنبعت إجاباتك…",
+    submitError: "معرفناش نبعت إجاباتك. جرّب تاني.", successTitle: "إجاباتك وصلت", successDesc: "شكرًا ليك! إجاباتك اتبعتت بنجاح.",
+    restart: "ابدأ من الأول", loading: "بنجهّز الأسئلة…", errorTitle: "معرفناش نحمّل الأسئلة", emptyTitle: "مفيش أسئلة دلوقتي", emptyDesc: "مفيش أسئلة متاحة حاليًا.",
+    nextStep: "ضيف مهاراتك",
+  },
+  skills: {
+    title: "إيه المهارات اللي عندك؟", intro: "إيه المهارات اللي عندك حاليًا؟ اختار كل اللي تعرف تشتغل بيه.",
+    searchLabel: "دوّر على مهارة", searchPlaceholder: "اكتب اسم المهارة…", available: "المهارات المتاحة", selected: "مهاراتك ({n})",
+    none: "لسه ماختارتش أي مهارة.", remove: "شيل {name}", clear: "امسح الكل", noMatch: "مفيش مهارة بالاسم ده.",
+    addCustom: "ضيف “{q}”", invalid: "اختار مهارة واحدة على الأقل.", submit: "رشّحلي مسارات", submitting: "بنبعت مهاراتك…",
+    submitError: "معرفناش نجيب الترشيحات. جرّب تاني.", sent: "مهاراتك وصلت.",
+    loading: "بنحمّل المهارات…", errorTitle: "معرفناش نحمّل المهارات", emptyTitle: "مفيش مهارات متاحة", emptyDesc: "قايمة المهارات فاضية دلوقتي.",
+    resultsTitle: "المسارات المقترحة", noResults: "مفيش مسارات نعرضها لسه. جرّب تضيف مهارات تانية.",
+    mockNote: "دي نتايج تجريبية للشكل بس — الترشيحات الحقيقية هتيجي من الباك إند.", why: "ليه المسار ده؟", view: "شوف المسار",
+  },
+};
