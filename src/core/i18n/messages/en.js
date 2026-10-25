@@ -30,6 +30,6 @@ export default {
     submitError: "We couldn't get the recommendations. Please try again.", sent: "Your skills were sent.",
     loading: "Loading skills…", errorTitle: "We couldn't load the skills", emptyTitle: "No skills available", emptyDesc: "The skills list is empty right now.",
     resultsTitle: "Recommended tracks", noResults: "No tracks to show yet. Try adding more skills.",
-    mockNote: "Placeholder results for the interface only — the real recommendations will come from the backend.", why: "Why this track?", view: "View track",
+    why: "Why this track?", view: "View track",
   },
 };

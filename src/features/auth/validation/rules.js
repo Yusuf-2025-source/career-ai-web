@@ -1,10 +1,10 @@
-// University email: must be an .edu address (also accepts country forms such as .edu.eg).
-const UNIVERSITY_EMAIL = /^[^\s@]+@([a-z0-9-]+\.)+edu(\.[a-z]{2})?$/i;
-export const UNIVERSITY_EMAIL_MSG = "Use your university email — it must end in .edu";
+// Faculty of Science email: a person's name or a 14-digit National ID @sci.asu.edu.eg.
+const PERSON_EMAIL = /^[a-z]+(?:[._-][a-z]+)*@sci\.asu\.edu\.eg$/i;
+const ACADEMIC_EMAIL = /^\d{14}@sci\.asu\.edu\.eg$/;
+const UNIVERSITY_EMAIL = new RegExp(`(?:${PERSON_EMAIL.source}|${ACADEMIC_EMAIL.source})`, "i");
+export const UNIVERSITY_EMAIL_MSG = "Use your name or 14-digit ID @sci.asu.edu.eg.";
 /** Live check while typing: returns an error message, or "" when OK. Empty input is left alone. */
 export const liveUniversityEmail = (v = "") => (!v.trim() || UNIVERSITY_EMAIL.test(v.trim()) ? "" : UNIVERSITY_EMAIL_MSG);
-// Faculty of Science academic email: 14-digit National ID @sci.asu.edu.eg  (loosen here if needed)
-const ACADEMIC_EMAIL = /^\d{14}@sci\.asu\.edu\.eg$/i;
 
 export const passwordChecks = (pw = "") => [
   { label: "8+ characters", ok: pw.length >= 8 },
@@ -13,9 +13,7 @@ export const passwordChecks = (pw = "") => [
   { label: "1 special char", ok: /[^A-Za-z0-9]/.test(pw) },
 ];
 
-/** Register: must be .edu first, then the faculty's 14-digit ID format. */
-export const liveRegisterEmail = (v = "") =>
-  !v.trim() ? "" : liveUniversityEmail(v) || (ACADEMIC_EMAIL.test(v.trim()) ? "" : "Use your 14-digit National ID @sci.asu.edu.eg.");
+export const liveRegisterEmail = liveUniversityEmail;
 
 export function validateForgot({ email }) {
   const e = {};
