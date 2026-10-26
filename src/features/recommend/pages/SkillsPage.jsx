@@ -6,15 +6,18 @@ import StateMessage from "../../../components/StateMessage.jsx";
 import Icon from "../../auth/components/Icon.jsx";
 import RecommendationResults from "../components/RecommendationResults.jsx";
 import { getSkills, submitSkills } from "../api/skillsApi.js";
+import { getTracks } from "../../tracks/api/tracksApi.js";
 
 export default function SkillsPage() {
   const { t, lang } = useLang();
   const { data: skills, loading, error, reload } = useAsync(getSkills, []);
+  const { data: tracks } = useAsync(getTracks, []);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState([]);   // [{ id, label, custom? }] — ids are unique (no duplicates)
   const [invalid, setInvalid] = useState(false);
   const [status, setStatus] = useState("idle");   // idle | loading | error | done
   const [results, setResults] = useState(null);
+  const [selectedTrack, setSelectedTrack] = useState("");
 
   const name = (s) => pickText(s.label, lang);
   const q = query.trim().toLowerCase();
@@ -31,6 +34,13 @@ export default function SkillsPage() {
     const label = query.trim();
     setSelected((cur) => (cur.some((s) => s.id === `custom:${label.toLowerCase()}`) ? cur : [...cur, { id: `custom:${label.toLowerCase()}`, label, custom: true }]));
     setQuery(""); setInvalid(false);
+  };
+  const chooseTrack = (trackId) => {
+    setSelectedTrack(trackId);
+    const track = tracks?.find((item) => item.id === trackId);
+    if (!track) return;
+    setSelected(track.skills.en.map((label, index) => ({ id: `${track.id}:${index}`, label })));
+    setInvalid(false);
   };
   const submit = async () => {
     if (!selected.length) return setInvalid(true);
@@ -68,6 +78,13 @@ export default function SkillsPage() {
           </div>
           <h2 className="sec-title">{t("skills.available")}</h2>
           {available}
+          <h2 className="sec-title">{t("skills.trackSkills")}</h2>
+          <label className="track-select-label" htmlFor="track-skill-select">{t("skills.chooseTrack")}</label>
+          <select id="track-skill-select" className="track-select" value={selectedTrack} onChange={(event) => chooseTrack(event.target.value)}>
+            <option value="">{t("skills.chooseTrackPlaceholder")}</option>
+            {(tracks ?? []).map((track) => <option value={track.id} key={track.id}>{pickText(track.name, lang)}</option>)}
+          </select>
+          {selectedTrack && <div className="track-selected-skills">{selected.map((skill) => <span className="tag" key={skill.id}>{name(skill)}</span>)}</div>}
         </section>
 
         <aside className="panel sel-panel">

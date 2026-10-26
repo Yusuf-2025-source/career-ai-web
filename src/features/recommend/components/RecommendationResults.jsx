@@ -1,8 +1,8 @@
-import Icon from "../../auth/components/Icon.jsx";
 import Link from "../../../core/router/Link.jsx";
 import StateMessage from "../../../components/StateMessage.jsx";
 import { useLang } from "../../../core/i18n/LanguageProvider.jsx";
 import { pickText } from "../../../core/i18n/pickText.js";
+import Icon from "../../auth/components/Icon.jsx";
 
 /** Renders whatever the API returns: name, description and (when present) an explanation. */
 export default function RecommendationResults({ data }) {
@@ -10,7 +10,6 @@ export default function RecommendationResults({ data }) {
   return (
     <section className="results-wrap" aria-labelledby="results-title">
       <h2 id="results-title">{t("skills.resultsTitle")}</h2>
-      {data.mock && <p className="notice"><Icon name="info" size={16} />{t("skills.mockNote")}</p>}
       {data.results.length === 0 ? <StateMessage icon="compass" title={t("skills.noResults")} /> : (
         <ul className="results">
           {data.results.map((r, i) => (

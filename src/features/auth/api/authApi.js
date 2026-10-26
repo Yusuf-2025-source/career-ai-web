@@ -38,6 +38,15 @@ export async function resendVerification({ email }) {
   return { message: "Sent" };
 }
 
+/** US-02 — Verify 4-digit verification code */
+export async function verifyCode({ email, code }) {
+  // return http("/auth/verify-code", { method: "POST", body: { email, code } });
+  await wait(800);
+  if (!code || code.length !== 4) throw { status: 400, message: "Please enter the full 4-digit code." };
+  if (code === "0000") throw { status: 400, message: "Invalid or expired verification code. Please request a new one." };
+  return { success: true, message: "Email verified successfully!" };
+}
+
 /** US-03 — Logout */
 export async function logout() {
   // return http("/auth/logout", { method: "POST", token });

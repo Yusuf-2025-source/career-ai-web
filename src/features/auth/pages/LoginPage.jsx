@@ -31,7 +31,7 @@ export default function LoginPage({ onNavigate }) {
       <form onSubmit={form.handleSubmit} noValidate>
         {form.serverError && <div className="alert" role="alert">{form.serverError}</div>}
         <IconField label="University Email" icon="mail" type="email" autoComplete="email"
-          placeholder="30599061781594@sci.asu.edu.eg" value={values.email} onChange={set("email")} error={errors.email} />
+          placeholder="ahmed@sci.asu.edu.eg" value={values.email} onChange={set("email")} error={errors.email} />
         <IconField label="Password" icon="lock" password autoComplete="current-password"
           placeholder="Enter your security credential" value={values.password} onChange={set("password")} error={errors.password} />
         <div className="row-between">

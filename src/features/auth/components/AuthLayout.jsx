@@ -1,9 +1,9 @@
 import Logo from "./Logo.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
 
-export default function AuthLayout({ title, subtitle, children, footer, showcase }) {
+export default function AuthLayout({ title, subtitle, children, footer, showcase, className = "" }) {
   return (
-    <div className="auth">
+    <div className={`auth ${className}`.trim()}>
       <ThemeToggle />
       <section className="left">
         <Logo />

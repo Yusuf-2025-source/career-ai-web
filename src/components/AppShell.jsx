@@ -25,6 +25,11 @@ export default function AppShell({ path, children }) {
             ))}
           </nav>
           <div className="appbar-tools">
+            <Link to="/login" className="appnav" style={{ textDecoration: "none", margin: 0 }}>
+              <span style={{ fontSize: 13.5, fontWeight: 700, color: "var(--primary)", padding: "7px 12px", borderRadius: 8, background: "color-mix(in srgb,var(--primary) 10%,transparent)" }}>
+                {lang === "ar" ? "تسجيل الدخول / الحساب" : "Login / Account"}
+              </span>
+            </Link>
             <button type="button" className="lang-btn" onClick={toggle} aria-label={t("nav.switchLang")}>
               <Icon name="globe" size={17} />{t("nav.langName")}
             </button>
