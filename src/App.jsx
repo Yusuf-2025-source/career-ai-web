@@ -10,6 +10,7 @@ import TracksPage from "./features/tracks/pages/TracksPage.jsx";
 import TrackDetailsPage from "./features/tracks/pages/TrackDetailsPage.jsx";
 import QuestionsPage from "./features/recommend/pages/QuestionsPage.jsx";
 import SkillsPage from "./features/recommend/pages/SkillsPage.jsx";
+import TrackChoicePage from "./features/tracks/pages/TrackChoicePage.jsx";
 
 // Routes (hash based):  /login  /register  /verify-email?email=...  /tracks  /tracks/:id  /recommend/questions  /recommend/skills  /forgot-password  /reset-password?token=...
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
   const trackMatch = path.match(/^\/tracks\/([^/]+)$/);
   let page = null;
   if (path === "/tracks") page = <TracksPage />;
+  else if (path === "/tracks/choose") page = <TrackChoicePage />;
   else if (trackMatch) page = <TrackDetailsPage id={decodeURIComponent(trackMatch[1])} />;
   else if (path === "/recommend/questions") page = <QuestionsPage />;
   else if (path === "/recommend/skills") page = <SkillsPage />;

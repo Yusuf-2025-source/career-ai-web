@@ -27,6 +27,7 @@ const P = {
   alert: "M12 3l10 18H2zM12 10v5M12 18h.01",
   refresh: "M20 11a8 8 0 0 0-14-4M4 4v4h4M4 13a8 8 0 0 0 14 4M20 20v-4h-4",
   grid: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+  cloud: "M7 18a4 4 0 1 1 1.2-7.8A5.5 5.5 0 0 1 19 12a3 3 0 0 1 0 6H7z",
   code: "M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16",
   shield: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z",
   pen: "M4 20l1-4L17 4l3 3L8 19zM14 7l3 3",

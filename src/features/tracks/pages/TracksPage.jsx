@@ -1,10 +1,10 @@
 import { useAsync } from "../../../core/hooks/useAsync.js";
 import { useLang } from "../../../core/i18n/LanguageProvider.jsx";
 import StateMessage from "../../../components/StateMessage.jsx";
-import Link from "../../../core/router/Link.jsx";
 import Icon from "../../auth/components/Icon.jsx";
 import TrackCard from "../components/TrackCard.jsx";
 import { getTracks } from "../api/tracksApi.js";
+import TrackChoicePage from "./TrackChoicePage.jsx";
 
 export default function TracksPage() {
   const { t } = useLang();
@@ -31,15 +31,8 @@ export default function TracksPage() {
   return (
     <>
       <div className="page-head"><h1>{t("tracks.title")}</h1><p>{t("tracks.intro")}</p></div>
-      {body}
-      {/* Same "not sure which track?" panel + button pair used on the track details page */}
-      <section className="panel reco" aria-labelledby="reco-title">
-        <h2 id="reco-title">{t("tracks.nextTitle")}</h2><p className="muted-p">{t("tracks.nextDesc")}</p>
-        <div className="cta-col reco-actions">
-          <Link className="btn" to="/recommend/skills">{t("tracks.recoSkill")} <span className="flip"><Icon name="arrow" size={17} /></span></Link>
-          <Link className="btn ghost" to="/recommend/questions">{t("tracks.recoQuestion")}</Link>
-        </div>
-      </section>
+      <div id="track-list">{body}</div>
+      <TrackChoicePage onKnownTrack={() => document.getElementById("track-list")?.scrollIntoView({ behavior: "smooth" })} />
     </>
   );
 }

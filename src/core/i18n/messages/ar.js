@@ -1,13 +1,28 @@
 // Egyptian Arabic (عامية مصرية) — written the way people actually talk in apps, not literal translations.
 export default {
+  trackChoice: {
+    title: "إنت عايز تعمل إيه؟",
+    intro: "اختار طريقة تبدأ بيها رحلتك المهنية.",
+    knownTitle: "أنا عارف التراك بتاعي",
+    knownDesc: "أنا عارف المجال اللي عايز أكمل فيه.",
+    knownAction: "اختار التراك",
+    questionsTitle: "ساعدني أختار التراك",
+    questionsDesc: "مش متأكد لسه؟ جاوب على كام سؤال ونساعدك تلاقي الأنسب.",
+    questionsAction: "ابدأ الأسئلة",
+    skillsTitle: "رشّحلي المهارات المناسبة",
+    skillsDesc: "قولنا إنت بتعرف إيه ونرشحلك المهارات والتراكات المناسبة.",
+    skillsAction: "رشّحلي مهارات",
+  },
   nav: { tracks: "المسارات", questions: "اعرف مسارك", skills: "مهاراتك", menu: "القايمة الرئيسية", switchLang: "غيّر اللغة", langName: "English" },
   common: { retry: "جرّب تاني", loading: "ثواني…", genericError: "حصلت مشكلة. جرّب تاني بعد شوية.", back: "رجوع" },
   tracks: {
     title: "المسارات الوظيفية", intro: "اتعرّف على المسارات المتاحة وشوف كل مسار بيقدّم إيه قبل ما تقرر.",
     explore: "شوف التفاصيل", solves: "بيحل إيه؟", roles: "الوظايف المتاحة", prerequisites: "محتاج تعرف إيه الأول؟",
+    formalDesc: "الوصف الرسمي", whatItDoes: "بيعمل إيه المسار؟", bestSkills: "أهم المهارات",
+    hoverHint: "قرّب الماوس عشان يتقلب الكارت", flipBack: "اقلب الكارت",
     emptyTitle: "مفيش مسارات دلوقتي", emptyDesc: "مفيش مسارات متاحة حاليًا. ارجع شوية كمان.",
     errorTitle: "معرفناش نحمّل المسارات", notFoundTitle: "المسار ده مش موجود", notFoundDesc: "ممكن يكون اتشال أو اللينك غلط.",
-    backToAll: "كل المسارات", skillsNeeded: "المهارات اللي هتستخدمها", nextTitle: "مش عارف أنهي مسار يناسبك؟",
+    backToAll: "كل المسارات", skillsNeeded: "المهارات اللي هتستخدمها", roadmap: "خطة التراك", marketDemand: "طلب السوق", marketDemandLabel: "نسبة الطلب في السوق حاليًا", nextTitle: "مش عارف أنهي مسار يناسبك؟",
     nextDesc: "جاوب على كام سؤال أو قولنا إنت بتعرف إيه.", ctaQuestions: "جاوب على الأسئلة", ctaSkills: "اختار مهاراتك",
     recoSkill: "ترشيح حسب المهارات", recoQuestion: "ترشيح حسب الأسئلة",
     setMine: "خلّي ده مساري", isMine: "ده مسارك", saveError: "معرفناش نحفظ مسارك. جرّب تاني.",
@@ -31,6 +46,6 @@ export default {
     submitError: "معرفناش نجيب الترشيحات. جرّب تاني.", sent: "مهاراتك وصلت.",
     loading: "بنحمّل المهارات…", errorTitle: "معرفناش نحمّل المهارات", emptyTitle: "مفيش مهارات متاحة", emptyDesc: "قايمة المهارات فاضية دلوقتي.",
     resultsTitle: "المسارات المقترحة", noResults: "مفيش مسارات نعرضها لسه. جرّب تضيف مهارات تانية.",
-    why: "ليه المسار ده؟", view: "شوف المسار",
+    why: "ليه المسار ده؟", view: "شوف المسار", trackSkills: "المهارات المعروفة لكل تراك", chooseTrack: "اختار التراك", chooseTrackPlaceholder: "اختار تراك عشان تظهر مهاراته",
   },
 };

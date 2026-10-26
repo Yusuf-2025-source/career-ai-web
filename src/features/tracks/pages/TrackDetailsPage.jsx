@@ -35,6 +35,7 @@ export default function TrackDetailsPage({ id }) {
   }
 
   const list = (v) => pickList(v, lang);
+  const roadmap = list(track.roadmap);
   return (
     <div style={{ "--c": "var(--primary)" }}>
       {back}
@@ -55,16 +56,10 @@ export default function TrackDetailsPage({ id }) {
           <section className="panel"><h2>{t("tracks.solves")}</h2><ul className="bullets">{list(track.problems).map((x) => <li key={x}>{x}</li>)}</ul></section>
           <section className="panel"><h2>{t("tracks.roles")}</h2><div className="tags">{list(track.roles).map((x) => <span className="tag" key={x}>{x}</span>)}</div></section>
           <section className="panel"><h2>{t("tracks.skillsNeeded")}</h2><div className="tags">{list(track.skills).map((x) => <span className="tag" key={x}>{x}</span>)}</div></section>
+          <section className="panel"><h2>{t("tracks.roadmap")}</h2><ol className="roadmap-list">{roadmap.map((step) => <li key={step}>{step}</li>)}</ol></section>
         </div>
         <aside className="stack">
           <section className="panel"><h2>{t("tracks.prerequisites")}</h2><ul className="bullets">{list(track.prerequisites).map((x) => <li key={x}>{x}</li>)}</ul></section>
-          <section className="panel">
-            <h2>{t("tracks.nextTitle")}</h2><p className="muted-p">{t("tracks.nextDesc")}</p>
-            <div className="cta-col">
-              <Link className="btn" to="/recommend/questions">{t("tracks.ctaQuestions")} <span className="flip"><Icon name="arrow" size={17} /></span></Link>
-              <Link className="btn ghost" to="/recommend/skills">{t("tracks.ctaSkills")}</Link>
-            </div>
-          </section>
         </aside>
       </div>
     </div>

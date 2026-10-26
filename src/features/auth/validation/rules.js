@@ -2,9 +2,20 @@
 const PERSON_EMAIL = /^[a-z]+(?:[._-][a-z]+)*@sci\.asu\.edu\.eg$/i;
 const ACADEMIC_EMAIL = /^\d{14}@sci\.asu\.edu\.eg$/;
 const UNIVERSITY_EMAIL = new RegExp(`(?:${PERSON_EMAIL.source}|${ACADEMIC_EMAIL.source})`, "i");
-export const UNIVERSITY_EMAIL_MSG = "Use your name or 14-digit ID @sci.asu.edu.eg.";
+export const UNIVERSITY_EMAIL_MSG = "Use your faculty of science email (@sci.asu.edu.eg).";
 /** Live check while typing: returns an error message, or "" when OK. Empty input is left alone. */
 export const liveUniversityEmail = (v = "") => (!v.trim() || UNIVERSITY_EMAIL.test(v.trim()) ? "" : UNIVERSITY_EMAIL_MSG);
+
+// Full name validation: letters (English & Arabic) and spaces only, NO numbers allowed.
+const NAME_HAS_NUMBERS = /\d/;
+const NAME_LETTERS_ONLY = /^[a-zA-Z\u0600-\u06FF\u0750-\u077F\s'\-]+$/;
+
+export const liveRegisterName = (v = "") => {
+  if (!v) return "";
+  if (NAME_HAS_NUMBERS.test(v)) return "Full name cannot contain numbers.";
+  if (!NAME_LETTERS_ONLY.test(v.trim())) return "Full name can only contain letters and spaces.";
+  return "";
+};
 
 export const passwordChecks = (pw = "") => [
   { label: "8+ characters", ok: pw.length >= 8 },
@@ -41,7 +52,16 @@ export function validateLogin({ email, password }) {
 
 export function validateRegister({ name, email, password, confirm, terms }) {
   const e = {};
-  if (!name.trim()) e.name = "Enter your full name.";
+  if (!name.trim()) {
+    e.name = "Enter your full name.";
+  } else if (NAME_HAS_NUMBERS.test(name)) {
+    e.name = "Full name cannot contain numbers.";
+  } else if (!NAME_LETTERS_ONLY.test(name.trim())) {
+    e.name = "Full name can only contain letters and spaces.";
+  } else if (name.trim().length < 3) {
+    e.name = "Please enter your full name (at least 3 letters).";
+  }
+
   if (!email.trim()) e.email = "Enter your academic email.";
   else if (liveRegisterEmail(email)) e.email = liveRegisterEmail(email);
   if (!password) e.password = "Create a password.";
